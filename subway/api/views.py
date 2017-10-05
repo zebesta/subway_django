@@ -20,6 +20,7 @@ def ltrain(request):
     response = requests.get(mta_base_url, params=payload)
     feed.ParseFromString(response.content)
     for entity in feed.entity:
-        if entity.HasField('trip_update'):
-            print(entity.trip_update)
-            return JsonResponse(entity.trip_update, safe=False)
+        for stop_time_update in entity.trip_update.stop_time_update:
+            if stop_time_update.stop_id == "L10N" or stop_time_update.stop_id == "L10S":
+                print(stop_time_update.stop_id)
+    return JsonResponse({"AHHH": "whatever"})
