@@ -1,6 +1,6 @@
 certifi==2017.7.27.1
 chardet==3.0.4
-Django==1.11.23
+Django==1.11.29
 gtfs-realtime-bindings==0.0.5
 idna==2.6
 protobuf==3.4.0
